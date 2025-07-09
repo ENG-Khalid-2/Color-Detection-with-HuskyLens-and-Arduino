@@ -11,30 +11,54 @@ The goal is to explore color recognition using AI without complex training or co
 
 | Component             | job |
 |-----------------------|------------------------------------------------|
-| Arduino Uno           | to disply the color on the serial monitor      |
-| HuskyLens AI Camera   | using ai to recognise the envarioment          |
-| Jumper Wires          | to send the deta between Arduino and HuskyLens |
-| Breadboard (optional) | to program the Arduino                         |
+| Arduino Uno           | To display the color on the Serial Monitor     |
+| HuskyLens AI Camera   | Using AI to recognize the environment         |
+| Jumper Wires          | To send the data between Arduino and HuskyLens |
 
+![diagram to show the connection ](diagram.png)
+## 🔌 Wiring Table
 
----
-
-## 📷 Camera Used
-- **Model:** HuskyLens AI Camera  
-- **Mode:** Color Recognition Mode
-
----
-
-## ⚙️ Steps and Configuration
-
-1. **Connected HuskyLens to Arduino Uno** using SoftwareSerial (Pins 10 & 11).
-2. **Installed the HuskyLens Arduino Library** from the official GitHub repo:
-   > https://github.com/HuskyLens/HUSKYLENSArduino
-3. Switched HuskyLens to **"Color Recognition"** mode using the onboard button.
-4. Taught the camera different colors (Red, Green, Blue, etc.) by showing them and pressing the learning button.
-5. Wrote Arduino code to read the detected color ID and print the corresponding **color name** to the Serial Monitor.
+| HuskyLens Pin | Arduino Pin |
+|---------------|-------------|
+| TX            | Pin 10      |
+| RX            | Pin 11      |
+| VCC           | 5V          |
+| GND           | GND         |
 
 ---
 
-## 🖥️ Output Example (Serial Monitor)
+## 📸 HuskyLens Modes
 
+The **HuskyLens** supports several AI-powered modes, including:
+
+- **Face Recognition** – Detects and recognizes faces
+- ![Face Recognition](face.jpg)
+- **Object Tracking** – Tracks learned objects.
+- ![Object Traking](ObjectTraking.jpg)
+- **Color Recognition** – Detects and identifies trained colors.
+- ![color Recognition](test1.jpg)
+- **Object Classification** – Classifies objects using ML models.
+- ![Object Classification](objectClassification.jpg)
+  
+---
+## 🧪 How It Works
+
+1. On the HuskyLens, switch to **Color Recognition** mode.
+2. Train it to recognize red and green objects by using the "Learn" button.
+3. Upload the Arduino code.
+4. Open the Serial Monitor to see detected color IDs and actions.
+---
+At the beginning, we trained the HuskyLens to recognize 3 colors:
+
+- **ID 1** → Yellow  
+- **ID 2** → Green  
+- **ID 3** → Blue  
+
+Once the training was complete, the HuskyLens would return the corresponding ID when it detects a color.
+![color Recognition](test2.jpg)
+
+Example Serial Monitor output:
+![result](result.jpg)
+
+
+---
